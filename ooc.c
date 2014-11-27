@@ -42,9 +42,9 @@ void employee_get_name(Employee s, char *name) {
 }
 
 
-void hello(void *obj, void (*p_get_name)(void*, char*), char *name) {
+void hello(void *receiver, void (*method)(void*, char*), char *name) {
 	char temp[400];
-	p_get_name(obj, &temp);
+	method(receiver, &temp);
 	sprintf(name, "Hello %s", temp);
 }
 
